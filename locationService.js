@@ -34,7 +34,7 @@ locationService.get("/",function(req,res){
 
 locationService.post("/",function(req,res){
     console.log(req.body.username + " attempting posting");
-    axios.get('http://localhost:3000/verify?username='+req.body.username+'&jwt='+req.body.jwt).then(async function(response){
+    axios.get('https://madinati-auth-service.herokuapp.com/verify?username='+req.body.username+'&jwt='+req.body.jwt).then(async function(response){
         if(response.status == 200){
             console.log(req.body);
             console.log(req.body.data);
